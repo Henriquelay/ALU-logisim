@@ -78,7 +78,9 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="labelloc" val="east"/>
     </tool>
     <tool lib="1" name="NOT Gate"/>
-    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="AND Gate">
+      <a name="facing" val="south"/>
+    </tool>
     <tool lib="1" name="OR Gate"/>
   </toolbar>
   <circuit name="alu_8_bits">
@@ -239,55 +241,63 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(60,130)" to="(260,130)"/>
     <wire from="(40,110)" to="(40,170)"/>
     <wire from="(60,130)" to="(60,190)"/>
-    <comp loc="(350,100)" name="AND_8_bits">
+    <comp lib="5" loc="(760,130)" name="7-Segment Display"/>
+    <comp lib="0" loc="(60,60)" name="Pin">
+      <a name="label" val="Cin"/>
+    </comp>
+    <comp lib="0" loc="(100,20)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="label" val="A"/>
+    </comp>
+    <comp loc="(240,120)" name="Shift_Right_8_bits">
       <a name="facing" val="south"/>
     </comp>
-    <comp lib="0" loc="(500,310)" name="Pin">
+    <comp lib="0" loc="(140,150)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
-      <a name="label" val="z"/>
-      <a name="labelloc" val="east"/>
+      <a name="label" val="C"/>
     </comp>
+    <comp lib="0" loc="(130,350)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="width" val="3"/>
+      <a name="label" val="OP"/>
+    </comp>
+    <comp loc="(500,310)" name="Igual_0_8b"/>
     <comp loc="(390,100)" name="OR_8_bits">
       <a name="facing" val="south"/>
     </comp>
+    <comp loc="(140,150)" name="Decodificador_Carry"/>
+    <comp lib="0" loc="(320,200)" name="Ground">
+      <a name="width" val="8"/>
+    </comp>
     <comp loc="(270,120)" name="Shift_Left_8_bits">
-      <a name="facing" val="south"/>
-    </comp>
-    <comp loc="(590,200)" name="Decodificador_4b"/>
-    <comp lib="5" loc="(760,130)" name="7-Segment Display"/>
-    <comp loc="(170,100)" name="somador_8_bits">
-      <a name="facing" val="south"/>
-    </comp>
-    <comp loc="(210,100)" name="Subtracao_8_bits">
       <a name="facing" val="south"/>
     </comp>
     <comp lib="0" loc="(100,40)" name="Pin">
       <a name="width" val="8"/>
       <a name="label" val="B"/>
     </comp>
-    <comp loc="(310,100)" name="XOR_8_bits">
+    <comp loc="(590,200)" name="Decodificador_4b"/>
+    <comp loc="(170,100)" name="somador_8_bits">
       <a name="facing" val="south"/>
-    </comp>
-    <comp lib="0" loc="(320,200)" name="Ground">
-      <a name="width" val="8"/>
     </comp>
     <comp lib="5" loc="(710,130)" name="7-Segment Display"/>
-    <comp loc="(140,150)" name="Decodificador_Carry"/>
-    <comp lib="0" loc="(140,150)" name="Pin">
+    <comp lib="0" loc="(420,330)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
-      <a name="label" val="C"/>
+      <a name="width" val="8"/>
+      <a name="label" val="s"/>
+      <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(60,60)" name="Pin">
-      <a name="label" val="Cin"/>
-    </comp>
-    <comp loc="(240,120)" name="Shift_Right_8_bits">
+    <comp loc="(160,330)" name="MUL_8_1_8bits">
       <a name="facing" val="south"/>
     </comp>
-    <comp lib="0" loc="(100,20)" name="Pin">
-      <a name="width" val="8"/>
-      <a name="label" val="A"/>
+    <comp loc="(590,120)" name="Decodificador_4b"/>
+    <comp lib="0" loc="(500,310)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="z"/>
+      <a name="labelloc" val="east"/>
     </comp>
     <comp lib="0" loc="(410,170)" name="Splitter">
       <a name="incoming" val="8"/>
@@ -299,23 +309,15 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="bit6" val="1"/>
       <a name="bit7" val="1"/>
     </comp>
-    <comp lib="0" loc="(420,330)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="label" val="s"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(130,350)" name="Pin">
-      <a name="facing" val="north"/>
-      <a name="width" val="3"/>
-      <a name="label" val="OP"/>
-    </comp>
-    <comp loc="(160,330)" name="MUL_8_1_8bits">
+    <comp loc="(210,100)" name="Subtracao_8_bits">
       <a name="facing" val="south"/>
     </comp>
-    <comp loc="(590,120)" name="Decodificador_4b"/>
-    <comp loc="(500,310)" name="Igual_0_8b"/>
+    <comp loc="(310,100)" name="XOR_8_bits">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp loc="(350,100)" name="AND_8_bits">
+      <a name="facing" val="south"/>
+    </comp>
   </circuit>
   <circuit name="alu_16_bits">
     <a name="circuit" val="alu_16_bits"/>
@@ -324,11 +326,10 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <a name="clabelfont" val="SansSerif bold 16"/>
     <a name="circuitnamedbox" val="false"/>
     <a name="circuitvhdlpath" val=""/>
-    <wire from="(390,230)" to="(390,300)"/>
-    <wire from="(390,140)" to="(390,210)"/>
+    <wire from="(350,300)" to="(410,300)"/>
+    <wire from="(410,300)" to="(470,300)"/>
     <wire from="(270,390)" to="(320,390)"/>
-    <wire from="(350,260)" to="(470,260)"/>
-    <wire from="(300,100)" to="(470,100)"/>
+    <wire from="(380,440)" to="(560,440)"/>
     <wire from="(120,180)" to="(230,180)"/>
     <wire from="(120,60)" to="(230,60)"/>
     <wire from="(130,190)" to="(130,340)"/>
@@ -336,26 +337,33 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(270,180)" to="(270,390)"/>
     <wire from="(270,50)" to="(380,50)"/>
     <wire from="(100,390)" to="(270,390)"/>
-    <wire from="(470,100)" to="(470,130)"/>
-    <wire from="(350,300)" to="(390,300)"/>
+    <wire from="(410,300)" to="(410,330)"/>
+    <wire from="(350,260)" to="(450,260)"/>
     <wire from="(320,120)" to="(320,210)"/>
-    <wire from="(300,140)" to="(390,140)"/>
+    <wire from="(430,140)" to="(470,140)"/>
+    <wire from="(450,260)" to="(450,360)"/>
     <wire from="(380,50)" to="(380,280)"/>
-    <wire from="(390,210)" to="(420,210)"/>
-    <wire from="(390,230)" to="(420,230)"/>
+    <wire from="(300,100)" to="(460,100)"/>
+    <wire from="(380,280)" to="(380,440)"/>
+    <wire from="(450,360)" to="(480,360)"/>
     <wire from="(350,280)" to="(380,280)"/>
     <wire from="(130,340)" to="(280,340)"/>
     <wire from="(300,120)" to="(320,120)"/>
+    <wire from="(450,260)" to="(470,260)"/>
+    <wire from="(460,350)" to="(480,350)"/>
     <wire from="(120,70)" to="(140,70)"/>
-    <wire from="(470,130)" to="(480,130)"/>
-    <wire from="(470,140)" to="(480,140)"/>
-    <wire from="(380,280)" to="(520,280)"/>
+    <wire from="(460,100)" to="(470,100)"/>
+    <wire from="(420,410)" to="(560,410)"/>
+    <wire from="(420,360)" to="(420,410)"/>
     <wire from="(140,220)" to="(280,220)"/>
     <wire from="(320,340)" to="(320,390)"/>
     <wire from="(120,190)" to="(130,190)"/>
-    <wire from="(450,220)" to="(520,220)"/>
-    <wire from="(470,140)" to="(470,260)"/>
-    <comp lib="0" loc="(100,170)" name="Splitter">
+    <wire from="(430,140)" to="(430,330)"/>
+    <wire from="(300,140)" to="(430,140)"/>
+    <wire from="(460,100)" to="(460,350)"/>
+    <comp loc="(260,120)" name="alu_8_bits"/>
+    <comp lib="0" loc="(500,370)" name="Splitter">
+      <a name="facing" val="west"/>
       <a name="incoming" val="16"/>
       <a name="appear" val="right"/>
       <a name="bit1" val="0"/>
@@ -373,6 +381,27 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="bit13" val="1"/>
       <a name="bit14" val="1"/>
       <a name="bit15" val="1"/>
+    </comp>
+    <comp lib="0" loc="(100,170)" name="Pin">
+      <a name="width" val="16"/>
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="0" loc="(100,50)" name="Pin">
+      <a name="width" val="16"/>
+      <a name="label" val="A"/>
+    </comp>
+    <comp loc="(310,280)" name="alu_8_bits"/>
+    <comp lib="0" loc="(500,370)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="16"/>
+      <a name="label" val="S"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(560,440)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Cout"/>
     </comp>
     <comp lib="0" loc="(100,50)" name="Splitter">
       <a name="incoming" val="16"/>
@@ -393,21 +422,15 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="bit14" val="1"/>
       <a name="bit15" val="1"/>
     </comp>
-    <comp lib="0" loc="(520,220)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Z"/>
+    <comp lib="1" loc="(420,360)" name="AND Gate">
+      <a name="facing" val="south"/>
+      <a name="size" val="30"/>
     </comp>
-    <comp lib="0" loc="(500,150)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="16"/>
-      <a name="label" val="S"/>
-      <a name="labelloc" val="north"/>
+    <comp lib="0" loc="(100,390)" name="Pin">
+      <a name="width" val="3"/>
+      <a name="label" val="OP"/>
     </comp>
-    <comp loc="(260,120)" name="alu_8_bits"/>
-    <comp lib="0" loc="(500,150)" name="Splitter">
-      <a name="facing" val="west"/>
+    <comp lib="0" loc="(100,170)" name="Splitter">
       <a name="incoming" val="16"/>
       <a name="appear" val="right"/>
       <a name="bit1" val="0"/>
@@ -426,26 +449,10 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="bit14" val="1"/>
       <a name="bit15" val="1"/>
     </comp>
-    <comp lib="0" loc="(100,390)" name="Pin">
-      <a name="width" val="3"/>
-      <a name="label" val="OP"/>
-    </comp>
-    <comp lib="0" loc="(100,170)" name="Pin">
-      <a name="width" val="16"/>
-      <a name="label" val="B"/>
-    </comp>
-    <comp lib="1" loc="(450,220)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="0" loc="(100,50)" name="Pin">
-      <a name="width" val="16"/>
-      <a name="label" val="A"/>
-    </comp>
-    <comp loc="(310,280)" name="alu_8_bits"/>
-    <comp lib="0" loc="(520,280)" name="Pin">
+    <comp lib="0" loc="(560,410)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
-      <a name="label" val="Cout"/>
+      <a name="label" val="Z"/>
     </comp>
   </circuit>
   <circuit name="OR_8_bits">
@@ -537,10 +544,19 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(170,180)" to="(170,240)"/>
     <wire from="(80,300)" to="(530,300)"/>
     <wire from="(80,330)" to="(210,330)"/>
-    <comp lib="0" loc="(60,220)" name="Pin">
-      <a name="facing" val="south"/>
+    <comp lib="1" loc="(370,130)" name="OR Gate">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="1" loc="(550,130)" name="OR Gate">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(60,400)" name="Pin">
+      <a name="facing" val="north"/>
       <a name="width" val="8"/>
-      <a name="label" val="A"/>
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="1" loc="(430,130)" name="OR Gate">
+      <a name="facing" val="north"/>
     </comp>
     <comp lib="0" loc="(60,400)" name="Splitter">
       <a name="fanout" val="8"/>
@@ -554,16 +570,10 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="bit6" val="1"/>
       <a name="bit7" val="0"/>
     </comp>
-    <comp lib="1" loc="(190,130)" name="OR Gate">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="1" loc="(550,130)" name="OR Gate">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="0" loc="(290,20)" name="Splitter">
+    <comp lib="0" loc="(60,220)" name="Pin">
       <a name="facing" val="south"/>
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
+      <a name="width" val="8"/>
+      <a name="label" val="A"/>
     </comp>
     <comp lib="0" loc="(60,220)" name="Splitter">
       <a name="fanout" val="8"/>
@@ -578,10 +588,10 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="bit6" val="1"/>
       <a name="bit7" val="0"/>
     </comp>
-    <comp lib="1" loc="(430,130)" name="OR Gate">
+    <comp lib="1" loc="(130,130)" name="OR Gate">
       <a name="facing" val="north"/>
     </comp>
-    <comp lib="1" loc="(130,130)" name="OR Gate">
+    <comp lib="1" loc="(310,130)" name="OR Gate">
       <a name="facing" val="north"/>
     </comp>
     <comp lib="0" loc="(290,20)" name="Pin">
@@ -589,21 +599,18 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="width" val="8"/>
       <a name="label" val="S"/>
     </comp>
-    <comp lib="1" loc="(370,130)" name="OR Gate">
+    <comp lib="1" loc="(190,130)" name="OR Gate">
       <a name="facing" val="north"/>
     </comp>
-    <comp lib="1" loc="(490,130)" name="OR Gate">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="0" loc="(60,400)" name="Pin">
-      <a name="facing" val="north"/>
-      <a name="width" val="8"/>
-      <a name="label" val="B"/>
+    <comp lib="0" loc="(290,20)" name="Splitter">
+      <a name="facing" val="south"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
     </comp>
     <comp lib="1" loc="(250,130)" name="OR Gate">
       <a name="facing" val="north"/>
     </comp>
-    <comp lib="1" loc="(310,130)" name="OR Gate">
+    <comp lib="1" loc="(490,130)" name="OR Gate">
       <a name="facing" val="north"/>
     </comp>
   </circuit>
@@ -631,12 +638,12 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="65" y="184"/>
       <rect height="4" stroke="none" width="10" x="171" y="98"/>
       <circ-port height="8" pin="360,320" width="8" x="46" y="176"/>
-      <circ-port height="8" pin="190,300" width="8" x="46" y="76"/>
       <circ-port height="8" pin="430,300" width="8" x="46" y="116"/>
-      <circ-port height="8" pin="120,320" width="8" x="46" y="136"/>
       <circ-port height="8" pin="70,300" width="8" x="46" y="56"/>
-      <circ-port height="8" pin="240,320" width="8" x="46" y="156"/>
       <circ-port height="8" pin="310,300" width="8" x="46" y="96"/>
+      <circ-port height="8" pin="240,320" width="8" x="46" y="156"/>
+      <circ-port height="8" pin="120,320" width="8" x="46" y="136"/>
+      <circ-port height="8" pin="190,300" width="8" x="46" y="76"/>
       <circ-port height="10" pin="220,30" width="10" x="175" y="95"/>
       <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="end" x="165" y="64"/>
       <rect height="20" stroke="none" width="110" x="60" y="190"/>
@@ -675,15 +682,26 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(290,190)" to="(290,240)"/>
     <wire from="(430,240)" to="(430,300)"/>
     <wire from="(120,260)" to="(120,320)"/>
-    <comp lib="0" loc="(190,300)" name="Pin">
+    <comp lib="0" loc="(240,320)" name="Pin">
       <a name="facing" val="north"/>
       <a name="width" val="8"/>
-      <a name="label" val="s2"/>
+      <a name="label" val="s6"/>
     </comp>
-    <comp lib="0" loc="(120,320)" name="Pin">
+    <comp loc="(160,220)" name="OR_8_bits">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(360,320)" name="Pin">
       <a name="facing" val="north"/>
       <a name="width" val="8"/>
-      <a name="label" val="s5"/>
+      <a name="label" val="s7"/>
+    </comp>
+    <comp loc="(210,220)" name="OR_8_bits">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(70,300)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="width" val="8"/>
+      <a name="label" val="s1"/>
     </comp>
     <comp lib="0" loc="(220,30)" name="Pin">
       <a name="facing" val="south"/>
@@ -691,21 +709,10 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="width" val="8"/>
       <a name="label" val="s"/>
     </comp>
-    <comp loc="(160,220)" name="OR_8_bits">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp loc="(260,220)" name="OR_8_bits">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="0" loc="(310,300)" name="Pin">
+    <comp lib="0" loc="(190,300)" name="Pin">
       <a name="facing" val="north"/>
       <a name="width" val="8"/>
-      <a name="label" val="s3"/>
-    </comp>
-    <comp lib="0" loc="(360,320)" name="Pin">
-      <a name="facing" val="north"/>
-      <a name="width" val="8"/>
-      <a name="label" val="s7"/>
+      <a name="label" val="s2"/>
     </comp>
     <comp lib="0" loc="(430,300)" name="Pin">
       <a name="facing" val="north"/>
@@ -715,24 +722,24 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <comp loc="(220,100)" name="OR_8_bits">
       <a name="facing" val="north"/>
     </comp>
-    <comp loc="(210,220)" name="OR_8_bits">
+    <comp lib="0" loc="(310,300)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="width" val="8"/>
+      <a name="label" val="s3"/>
+    </comp>
+    <comp loc="(260,220)" name="OR_8_bits">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp loc="(180,160)" name="OR_8_bits">
       <a name="facing" val="north"/>
     </comp>
     <comp loc="(270,160)" name="OR_8_bits">
       <a name="facing" val="north"/>
     </comp>
-    <comp lib="0" loc="(240,320)" name="Pin">
+    <comp lib="0" loc="(120,320)" name="Pin">
       <a name="facing" val="north"/>
       <a name="width" val="8"/>
-      <a name="label" val="s6"/>
-    </comp>
-    <comp loc="(180,160)" name="OR_8_bits">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="0" loc="(70,300)" name="Pin">
-      <a name="facing" val="north"/>
-      <a name="width" val="8"/>
-      <a name="label" val="s1"/>
+      <a name="label" val="s5"/>
     </comp>
   </circuit>
   <circuit name="AND_8_bits">
@@ -824,15 +831,6 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(170,180)" to="(170,240)"/>
     <wire from="(80,300)" to="(530,300)"/>
     <wire from="(80,330)" to="(210,330)"/>
-    <comp lib="1" loc="(130,130)" name="AND Gate">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="1" loc="(250,130)" name="AND Gate">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="1" loc="(550,130)" name="AND Gate">
-      <a name="facing" val="north"/>
-    </comp>
     <comp lib="0" loc="(60,400)" name="Splitter">
       <a name="fanout" val="8"/>
       <a name="incoming" val="8"/>
@@ -845,7 +843,24 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="bit6" val="1"/>
       <a name="bit7" val="0"/>
     </comp>
-    <comp lib="1" loc="(430,130)" name="AND Gate">
+    <comp lib="1" loc="(550,130)" name="AND Gate">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="1" loc="(190,130)" name="AND Gate">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="1" loc="(310,130)" name="AND Gate">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="1" loc="(130,130)" name="AND Gate">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(290,20)" name="Splitter">
+      <a name="facing" val="south"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+    </comp>
+    <comp lib="1" loc="(370,130)" name="AND Gate">
       <a name="facing" val="north"/>
     </comp>
     <comp lib="0" loc="(290,20)" name="Pin">
@@ -858,7 +873,15 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="width" val="8"/>
       <a name="label" val="B"/>
     </comp>
-    <comp lib="1" loc="(490,130)" name="AND Gate">
+    <comp lib="0" loc="(60,220)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="8"/>
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="1" loc="(250,130)" name="AND Gate">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="1" loc="(430,130)" name="AND Gate">
       <a name="facing" val="north"/>
     </comp>
     <comp lib="0" loc="(60,220)" name="Splitter">
@@ -874,23 +897,7 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="bit6" val="1"/>
       <a name="bit7" val="0"/>
     </comp>
-    <comp lib="1" loc="(190,130)" name="AND Gate">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="0" loc="(290,20)" name="Splitter">
-      <a name="facing" val="south"/>
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
-    </comp>
-    <comp lib="0" loc="(60,220)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="width" val="8"/>
-      <a name="label" val="A"/>
-    </comp>
-    <comp lib="1" loc="(310,130)" name="AND Gate">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="1" loc="(370,130)" name="AND Gate">
+    <comp lib="1" loc="(490,130)" name="AND Gate">
       <a name="facing" val="north"/>
     </comp>
   </circuit>
@@ -929,14 +936,15 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(120,20)" to="(160,20)"/>
     <wire from="(120,90)" to="(160,90)"/>
     <wire from="(60,70)" to="(160,70)"/>
+    <comp lib="0" loc="(40,30)" name="Pin">
+      <a name="label" val="A"/>
+      <a name="labelloc" val="north"/>
+    </comp>
     <comp lib="1" loc="(260,50)" name="OR Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(190,30)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="0" loc="(40,30)" name="Pin">
-      <a name="label" val="A"/>
+    <comp lib="0" loc="(40,80)" name="Pin">
+      <a name="label" val="B"/>
       <a name="labelloc" val="north"/>
     </comp>
     <comp lib="0" loc="(280,50)" name="Pin">
@@ -945,18 +953,17 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="label" val="S"/>
       <a name="labelloc" val="north"/>
     </comp>
-    <comp lib="0" loc="(40,80)" name="Pin">
-      <a name="label" val="B"/>
-      <a name="labelloc" val="north"/>
+    <comp lib="1" loc="(120,90)" name="NOT Gate">
+      <a name="size" val="20"/>
     </comp>
     <comp lib="1" loc="(190,80)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(120,90)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
     <comp lib="1" loc="(120,20)" name="NOT Gate">
       <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(190,30)" name="AND Gate">
+      <a name="size" val="30"/>
     </comp>
   </circuit>
   <circuit name="XOR_8_bits">
@@ -1048,16 +1055,41 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(170,180)" to="(170,240)"/>
     <wire from="(80,330)" to="(210,330)"/>
     <wire from="(80,300)" to="(530,300)"/>
+    <comp lib="0" loc="(60,400)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="width" val="8"/>
+      <a name="label" val="B"/>
+    </comp>
     <comp loc="(430,150)" name="XOR_2_bits">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp loc="(190,150)" name="XOR_2_bits">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp loc="(550,150)" name="XOR_2_bits">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp loc="(310,150)" name="XOR_2_bits">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp loc="(490,150)" name="XOR_2_bits">
       <a name="facing" val="north"/>
     </comp>
     <comp loc="(250,150)" name="XOR_2_bits">
       <a name="facing" val="north"/>
     </comp>
+    <comp lib="0" loc="(290,20)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="S"/>
+    </comp>
     <comp lib="0" loc="(60,220)" name="Pin">
       <a name="facing" val="south"/>
       <a name="width" val="8"/>
       <a name="label" val="A"/>
+    </comp>
+    <comp loc="(370,150)" name="XOR_2_bits">
+      <a name="facing" val="north"/>
     </comp>
     <comp lib="0" loc="(60,220)" name="Splitter">
       <a name="fanout" val="8"/>
@@ -1072,22 +1104,10 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="bit6" val="1"/>
       <a name="bit7" val="0"/>
     </comp>
-    <comp loc="(490,150)" name="XOR_2_bits">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp loc="(370,150)" name="XOR_2_bits">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="0" loc="(290,20)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="label" val="S"/>
-    </comp>
-    <comp loc="(190,150)" name="XOR_2_bits">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp loc="(130,150)" name="XOR_2_bits">
-      <a name="facing" val="north"/>
+    <comp lib="0" loc="(290,20)" name="Splitter">
+      <a name="facing" val="south"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
     </comp>
     <comp lib="0" loc="(60,400)" name="Splitter">
       <a name="fanout" val="8"/>
@@ -1101,20 +1121,7 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="bit6" val="1"/>
       <a name="bit7" val="0"/>
     </comp>
-    <comp loc="(550,150)" name="XOR_2_bits">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="0" loc="(60,400)" name="Pin">
-      <a name="facing" val="north"/>
-      <a name="width" val="8"/>
-      <a name="label" val="B"/>
-    </comp>
-    <comp lib="0" loc="(290,20)" name="Splitter">
-      <a name="facing" val="south"/>
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
-    </comp>
-    <comp loc="(310,150)" name="XOR_2_bits">
+    <comp loc="(130,150)" name="XOR_2_bits">
       <a name="facing" val="north"/>
     </comp>
   </circuit>
@@ -1224,63 +1231,24 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(60,90)" to="(60,150)"/>
     <wire from="(80,110)" to="(80,170)"/>
     <wire from="(100,130)" to="(100,190)"/>
-    <comp lib="1" loc="(150,340)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(140,190)" name="NOT Gate">
+    <comp lib="1" loc="(140,90)" name="NOT Gate">
       <a name="size" val="20"/>
     </comp>
-    <comp lib="1" loc="(150,390)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(240,50)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(190,160)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="0" loc="(40,80)" name="Pin">
-      <a name="label" val="B"/>
+    <comp lib="0" loc="(40,30)" name="Pin">
+      <a name="label" val="A"/>
       <a name="labelloc" val="north"/>
     </comp>
-    <comp lib="0" loc="(310,340)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Cout"/>
-      <a name="labelloc" val="north"/>
-    </comp>
-    <comp lib="1" loc="(140,40)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(190,30)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(190,230)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(150,290)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(370,150)" name="OR Gate">
+    <comp lib="1" loc="(240,250)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
     <comp lib="1" loc="(220,320)" name="OR Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(240,120)" name="AND Gate">
+    <comp lib="1" loc="(320,180)" name="OR Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(140,90)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(240,180)" name="AND Gate">
+    <comp lib="1" loc="(270,340)" name="OR Gate">
       <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(240,250)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(140,170)" name="NOT Gate">
-      <a name="size" val="20"/>
     </comp>
     <comp lib="0" loc="(390,150)" name="Pin">
       <a name="facing" val="west"/>
@@ -1288,30 +1256,69 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="label" val="S"/>
       <a name="labelloc" val="north"/>
     </comp>
-    <comp lib="0" loc="(40,30)" name="Pin">
-      <a name="label" val="A"/>
-      <a name="labelloc" val="north"/>
+    <comp lib="1" loc="(240,180)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(190,230)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(140,190)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(140,170)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(190,30)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(240,50)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(320,120)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(370,150)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(150,340)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(150,290)" name="AND Gate">
+      <a name="size" val="30"/>
     </comp>
     <comp lib="1" loc="(140,20)" name="NOT Gate">
       <a name="size" val="20"/>
     </comp>
+    <comp lib="1" loc="(240,120)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="0" loc="(310,340)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Cout"/>
+      <a name="labelloc" val="north"/>
+    </comp>
     <comp lib="1" loc="(140,130)" name="NOT Gate">
       <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(190,100)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(270,340)" name="OR Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(320,180)" name="OR Gate">
-      <a name="size" val="30"/>
     </comp>
     <comp lib="0" loc="(40,130)" name="Pin">
       <a name="label" val="Cin"/>
       <a name="labelloc" val="north"/>
     </comp>
-    <comp lib="1" loc="(320,120)" name="OR Gate">
+    <comp lib="0" loc="(40,80)" name="Pin">
+      <a name="label" val="B"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="1" loc="(140,40)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(190,100)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(150,390)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(190,160)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
   </circuit>
@@ -1429,64 +1436,13 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(510,330)" to="(580,330)"/>
     <wire from="(570,340)" to="(580,340)"/>
     <wire from="(370,70)" to="(440,70)"/>
-    <comp loc="(140,60)" name="somador_2_bits">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="0" loc="(310,20)" name="Splitter">
-      <a name="facing" val="south"/>
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
-    </comp>
     <comp loc="(200,70)" name="somador_2_bits">
       <a name="facing" val="north"/>
-    </comp>
-    <comp loc="(380,100)" name="somador_2_bits">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="0" loc="(60,350)" name="Pin">
-      <a name="facing" val="north"/>
-      <a name="width" val="8"/>
-      <a name="label" val="B"/>
-    </comp>
-    <comp lib="0" loc="(60,170)" name="Splitter">
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
-      <a name="appear" val="right"/>
-      <a name="bit0" val="7"/>
-      <a name="bit1" val="6"/>
-      <a name="bit2" val="5"/>
-      <a name="bit3" val="4"/>
-      <a name="bit4" val="3"/>
-      <a name="bit5" val="2"/>
-      <a name="bit6" val="1"/>
-      <a name="bit7" val="0"/>
     </comp>
     <comp loc="(500,120)" name="somador_2_bits">
       <a name="facing" val="north"/>
     </comp>
-    <comp lib="0" loc="(60,170)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="width" val="8"/>
-      <a name="label" val="A"/>
-    </comp>
     <comp loc="(560,130)" name="somador_2_bits">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="0" loc="(610,150)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="label" val="Cin"/>
-      <a name="labelloc" val="north"/>
-    </comp>
-    <comp lib="0" loc="(100,80)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="label" val="Cout"/>
-    </comp>
-    <comp lib="0" loc="(310,20)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="label" val="S"/>
-    </comp>
-    <comp loc="(260,80)" name="somador_2_bits">
       <a name="facing" val="north"/>
     </comp>
     <comp lib="0" loc="(60,350)" name="Splitter">
@@ -1504,8 +1460,59 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <comp loc="(440,110)" name="somador_2_bits">
       <a name="facing" val="north"/>
     </comp>
+    <comp lib="0" loc="(100,80)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="label" val="Cout"/>
+    </comp>
+    <comp loc="(380,100)" name="somador_2_bits">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp loc="(140,60)" name="somador_2_bits">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(310,20)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="S"/>
+    </comp>
+    <comp loc="(260,80)" name="somador_2_bits">
+      <a name="facing" val="north"/>
+    </comp>
     <comp loc="(320,90)" name="somador_2_bits">
       <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(610,150)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Cin"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(310,20)" name="Splitter">
+      <a name="facing" val="south"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+    </comp>
+    <comp lib="0" loc="(60,170)" name="Splitter">
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+      <a name="appear" val="right"/>
+      <a name="bit0" val="7"/>
+      <a name="bit1" val="6"/>
+      <a name="bit2" val="5"/>
+      <a name="bit3" val="4"/>
+      <a name="bit4" val="3"/>
+      <a name="bit5" val="2"/>
+      <a name="bit6" val="1"/>
+      <a name="bit7" val="0"/>
+    </comp>
+    <comp lib="0" loc="(60,350)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="width" val="8"/>
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="0" loc="(60,170)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="8"/>
+      <a name="label" val="A"/>
     </comp>
   </circuit>
   <circuit name="Subtracao_8_bits">
@@ -1632,26 +1639,71 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(570,180)" to="(570,360)"/>
     <wire from="(570,360)" to="(580,360)"/>
     <wire from="(620,170)" to="(630,170)"/>
-    <comp lib="1" loc="(110,330)" name="NOT Gate">
+    <comp lib="1" loc="(600,170)" name="NOT Gate">
+      <a name="facing" val="west"/>
       <a name="size" val="20"/>
     </comp>
-    <comp lib="0" loc="(60,370)" name="Splitter">
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
-      <a name="bit0" val="7"/>
-      <a name="bit1" val="6"/>
-      <a name="bit2" val="5"/>
-      <a name="bit3" val="4"/>
-      <a name="bit4" val="3"/>
-      <a name="bit5" val="2"/>
-      <a name="bit6" val="1"/>
-      <a name="bit7" val="0"/>
+    <comp lib="1" loc="(110,360)" name="NOT Gate">
+      <a name="size" val="20"/>
     </comp>
-    <comp lib="1" loc="(110,290)" name="NOT Gate">
+    <comp loc="(320,110)" name="somador_2_bits">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp loc="(500,140)" name="somador_2_bits">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="1" loc="(110,340)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(70,90)" name="NOT Gate">
+      <a name="facing" val="west"/>
+      <a name="size" val="20"/>
+    </comp>
+    <comp loc="(380,120)" name="somador_2_bits">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="1" loc="(110,310)" name="NOT Gate">
       <a name="size" val="20"/>
     </comp>
     <comp lib="1" loc="(110,320)" name="NOT Gate">
       <a name="size" val="20"/>
+    </comp>
+    <comp loc="(200,90)" name="somador_2_bits">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp loc="(560,150)" name="somador_2_bits">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="1" loc="(110,300)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(110,330)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(110,350)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="0" loc="(70,90)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="label" val="Cout"/>
+    </comp>
+    <comp lib="0" loc="(60,190)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="8"/>
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(630,170)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Cin"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="1" loc="(110,290)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="0" loc="(310,30)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="S"/>
     </comp>
     <comp lib="0" loc="(60,190)" name="Splitter">
       <a name="fanout" val="8"/>
@@ -1666,81 +1718,36 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="bit6" val="1"/>
       <a name="bit7" val="0"/>
     </comp>
-    <comp lib="0" loc="(60,190)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="width" val="8"/>
-      <a name="label" val="A"/>
-    </comp>
-    <comp loc="(560,150)" name="somador_2_bits">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="1" loc="(600,170)" name="NOT Gate">
-      <a name="facing" val="west"/>
-      <a name="size" val="20"/>
-    </comp>
     <comp loc="(140,80)" name="somador_2_bits">
       <a name="facing" val="north"/>
-    </comp>
-    <comp lib="1" loc="(110,340)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(110,350)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="0" loc="(70,90)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="label" val="Cout"/>
-    </comp>
-    <comp loc="(260,100)" name="somador_2_bits">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp loc="(320,110)" name="somador_2_bits">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="1" loc="(70,90)" name="NOT Gate">
-      <a name="facing" val="west"/>
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="0" loc="(60,370)" name="Pin">
-      <a name="facing" val="north"/>
-      <a name="width" val="8"/>
-      <a name="label" val="B"/>
-    </comp>
-    <comp lib="1" loc="(110,300)" name="NOT Gate">
-      <a name="size" val="20"/>
     </comp>
     <comp lib="0" loc="(310,30)" name="Splitter">
       <a name="facing" val="south"/>
       <a name="fanout" val="8"/>
       <a name="incoming" val="8"/>
     </comp>
-    <comp lib="1" loc="(110,360)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp loc="(200,90)" name="somador_2_bits">
+    <comp loc="(260,100)" name="somador_2_bits">
       <a name="facing" val="north"/>
     </comp>
-    <comp lib="1" loc="(110,310)" name="NOT Gate">
-      <a name="size" val="20"/>
+    <comp lib="0" loc="(60,370)" name="Splitter">
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+      <a name="bit0" val="7"/>
+      <a name="bit1" val="6"/>
+      <a name="bit2" val="5"/>
+      <a name="bit3" val="4"/>
+      <a name="bit4" val="3"/>
+      <a name="bit5" val="2"/>
+      <a name="bit6" val="1"/>
+      <a name="bit7" val="0"/>
     </comp>
-    <comp loc="(500,140)" name="somador_2_bits">
+    <comp lib="0" loc="(60,370)" name="Pin">
       <a name="facing" val="north"/>
+      <a name="width" val="8"/>
+      <a name="label" val="B"/>
     </comp>
     <comp loc="(440,130)" name="somador_2_bits">
       <a name="facing" val="north"/>
-    </comp>
-    <comp loc="(380,120)" name="somador_2_bits">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="0" loc="(310,30)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="label" val="S"/>
-    </comp>
-    <comp lib="0" loc="(630,170)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="label" val="Cin"/>
-      <a name="labelloc" val="north"/>
     </comp>
   </circuit>
   <circuit name="Shift_Left_8_bits">
@@ -1756,11 +1763,12 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="77" y="65">Shift L</text>
       <circ-port height="8" pin="60,130" width="8" x="46" y="56"/>
       <circ-port height="10" pin="160,120" width="10" x="95" y="55"/>
-      <circ-port height="10" pin="110,180" width="10" x="95" y="65"/>
-      <circ-port height="8" pin="120,30" width="8" x="46" y="66"/>
+      <circ-port height="10" pin="110,160" width="10" x="95" y="65"/>
+      <circ-port height="8" pin="110,30" width="8" x="46" y="66"/>
       <circ-anchor facing="east" height="6" width="6" x="97" y="57"/>
     </appear>
     <wire from="(80,120)" to="(110,120)"/>
+    <wire from="(110,40)" to="(140,40)"/>
     <wire from="(80,60)" to="(140,60)"/>
     <wire from="(80,100)" to="(140,100)"/>
     <wire from="(80,80)" to="(140,80)"/>
@@ -1768,9 +1776,8 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(80,110)" to="(140,110)"/>
     <wire from="(80,50)" to="(140,50)"/>
     <wire from="(80,90)" to="(140,90)"/>
-    <wire from="(140,30)" to="(140,40)"/>
-    <wire from="(110,120)" to="(110,180)"/>
-    <wire from="(120,30)" to="(140,30)"/>
+    <wire from="(110,120)" to="(110,160)"/>
+    <wire from="(110,30)" to="(110,40)"/>
     <comp lib="0" loc="(160,120)" name="Splitter">
       <a name="facing" val="west"/>
       <a name="fanout" val="8"/>
@@ -1781,20 +1788,21 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="fanout" val="8"/>
       <a name="incoming" val="8"/>
     </comp>
-    <comp lib="0" loc="(110,180)" name="Pin">
-      <a name="facing" val="north"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Cout"/>
-    </comp>
-    <comp lib="0" loc="(120,30)" name="Pin">
-      <a name="label" val="Cin"/>
-    </comp>
     <comp lib="0" loc="(160,120)" name="Pin">
       <a name="facing" val="north"/>
       <a name="output" val="true"/>
       <a name="width" val="8"/>
       <a name="label" val="S"/>
       <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(110,160)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Cout"/>
+    </comp>
+    <comp lib="0" loc="(110,30)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="Cin"/>
     </comp>
     <comp lib="0" loc="(60,130)" name="Pin">
       <a name="facing" val="north"/>
@@ -1830,29 +1838,10 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(80,110)" to="(140,110)"/>
     <wire from="(110,130)" to="(110,170)"/>
     <wire from="(110,40)" to="(110,50)"/>
-    <comp lib="0" loc="(60,130)" name="Splitter">
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
-    </comp>
-    <comp lib="0" loc="(60,130)" name="Pin">
-      <a name="facing" val="north"/>
-      <a name="width" val="8"/>
-      <a name="label" val="B"/>
-    </comp>
-    <comp lib="0" loc="(160,140)" name="Splitter">
-      <a name="facing" val="west"/>
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
-      <a name="appear" val="right"/>
-    </comp>
     <comp lib="0" loc="(110,40)" name="Pin">
       <a name="facing" val="south"/>
       <a name="output" val="true"/>
       <a name="label" val="Cout"/>
-    </comp>
-    <comp lib="0" loc="(110,170)" name="Pin">
-      <a name="facing" val="north"/>
-      <a name="label" val="Cin"/>
     </comp>
     <comp lib="0" loc="(160,140)" name="Pin">
       <a name="facing" val="north"/>
@@ -1860,6 +1849,25 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="width" val="8"/>
       <a name="label" val="S"/>
       <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(60,130)" name="Splitter">
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+    </comp>
+    <comp lib="0" loc="(160,140)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+      <a name="appear" val="right"/>
+    </comp>
+    <comp lib="0" loc="(110,170)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="label" val="Cin"/>
+    </comp>
+    <comp lib="0" loc="(60,130)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="width" val="8"/>
+      <a name="label" val="B"/>
     </comp>
   </circuit>
   <circuit name="Decodificador_4_b">
@@ -2188,13 +2196,13 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(370,1420)" to="(530,1420)"/>
     <wire from="(300,270)" to="(320,270)"/>
     <wire from="(320,610)" to="(340,610)"/>
+    <wire from="(320,1410)" to="(340,1410)"/>
+    <wire from="(60,1730)" to="(340,1730)"/>
     <wire from="(300,1550)" to="(320,1550)"/>
     <wire from="(300,1070)" to="(320,1070)"/>
     <wire from="(320,2050)" to="(340,2050)"/>
-    <wire from="(320,770)" to="(340,770)"/>
     <wire from="(370,660)" to="(390,660)"/>
-    <wire from="(320,1410)" to="(340,1410)"/>
-    <wire from="(60,1730)" to="(340,1730)"/>
+    <wire from="(320,770)" to="(340,770)"/>
     <wire from="(390,840)" to="(410,840)"/>
     <wire from="(390,1960)" to="(410,1960)"/>
     <wire from="(460,1710)" to="(480,1710)"/>
@@ -2339,230 +2347,74 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(250,390)" to="(270,390)"/>
     <wire from="(60,430)" to="(140,430)"/>
     <wire from="(60,2010)" to="(60,2060)"/>
-    <comp lib="1" loc="(230,1650)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(160,460)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(300,270)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(230,130)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(440,830)" name="OR Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(160,1900)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(230,50)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(300,90)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="0" loc="(40,200)" name="Pin">
-      <a name="label" val="a3"/>
-      <a name="labelloc" val="north"/>
-    </comp>
-    <comp lib="1" loc="(440,1080)" name="OR Gate">
-      <a name="size" val="30"/>
-    </comp>
     <comp lib="1" loc="(510,1160)" name="OR Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(230,1400)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="0" loc="(530,1420)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="e"/>
-      <a name="labelloc" val="north"/>
-    </comp>
-    <comp lib="1" loc="(230,1500)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(230,440)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(300,1120)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(300,550)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(300,870)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(300,1470)" name="OR Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(300,1700)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(230,1450)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(300,1630)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(230,660)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(230,710)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(230,1540)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(370,1790)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(370,660)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(300,1550)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="0" loc="(530,190)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="a"/>
-      <a name="labelloc" val="north"/>
-    </comp>
-    <comp lib="1" loc="(440,630)" name="OR Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(230,580)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(440,470)" name="OR Gate">
       <a name="size" val="30"/>
     </comp>
     <comp lib="1" loc="(160,430)" name="NOT Gate">
       <a name="size" val="20"/>
     </comp>
-    <comp lib="1" loc="(230,1840)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(440,1240)" name="OR Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(370,1910)" name="OR Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(230,290)" name="NOT Gate">
+    <comp lib="1" loc="(160,1330)" name="NOT Gate">
       <a name="size" val="20"/>
     </comp>
-    <comp lib="1" loc="(230,490)" name="NOT Gate">
+    <comp lib="0" loc="(40,140)" name="Pin">
+      <a name="label" val="a2"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="1" loc="(230,2030)" name="NOT Gate">
       <a name="size" val="20"/>
     </comp>
-    <comp lib="1" loc="(160,1410)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(300,1300)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(300,340)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(300,1860)" name="OR Gate">
+    <comp lib="1" loc="(230,1500)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(160,990)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(440,1760)" name="OR Gate">
+    <comp lib="1" loc="(370,2040)" name="OR Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(160,700)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(230,1610)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(300,820)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(370,780)" name="OR Gate">
+    <comp lib="1" loc="(440,1970)" name="OR Gate">
       <a name="size" val="30"/>
     </comp>
     <comp lib="1" loc="(230,1980)" name="NOT Gate">
       <a name="size" val="20"/>
     </comp>
-    <comp lib="1" loc="(300,740)" name="OR Gate">
+    <comp lib="1" loc="(300,1960)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="0" loc="(530,1700)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="f"/>
-      <a name="labelloc" val="north"/>
-    </comp>
-    <comp lib="0" loc="(530,550)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="b"/>
-      <a name="labelloc" val="north"/>
-    </comp>
-    <comp lib="1" loc="(370,600)" name="AND Gate">
+    <comp lib="1" loc="(300,200)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(300,30)" name="AND Gate">
+    <comp lib="1" loc="(440,470)" name="OR Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(230,370)" name="NOT Gate">
+    <comp lib="1" loc="(230,20)" name="NOT Gate">
       <a name="size" val="20"/>
     </comp>
-    <comp lib="1" loc="(230,770)" name="AND Gate">
+    <comp lib="1" loc="(160,1050)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(230,1400)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(230,1270)" name="NOT Gate">
+    <comp lib="1" loc="(230,130)" name="NOT Gate">
       <a name="size" val="20"/>
     </comp>
     <comp lib="1" loc="(300,650)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(230,1940)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(160,730)" name="NOT Gate">
+    <comp lib="1" loc="(230,930)" name="NOT Gate">
       <a name="size" val="20"/>
     </comp>
-    <comp lib="1" loc="(370,530)" name="AND Gate">
+    <comp lib="1" loc="(230,250)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(230,810)" name="NOT Gate">
+    <comp lib="1" loc="(370,780)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(230,370)" name="NOT Gate">
       <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(370,1690)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(440,100)" name="OR Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(160,1050)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(370,150)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(160,1600)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(300,990)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(230,1890)" name="AND Gate">
-      <a name="size" val="30"/>
     </comp>
     <comp lib="1" loc="(300,920)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(510,190)" name="OR Gate">
+    <comp lib="1" loc="(300,590)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
     <comp lib="0" loc="(530,830)" name="Pin">
@@ -2571,14 +2423,204 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="label" val="c"/>
       <a name="labelloc" val="north"/>
     </comp>
-    <comp lib="0" loc="(40,140)" name="Pin">
-      <a name="label" val="a2"/>
-      <a name="labelloc" val="north"/>
-    </comp>
-    <comp lib="1" loc="(300,1960)" name="AND Gate">
+    <comp lib="1" loc="(370,420)" name="OR Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(300,590)" name="AND Gate">
+    <comp lib="1" loc="(300,90)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(300,1550)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(230,1060)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(510,550)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(300,1180)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(230,400)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(440,830)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(230,860)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(230,1840)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="0" loc="(40,30)" name="Pin">
+      <a name="label" val="a0"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(40,200)" name="Pin">
+      <a name="label" val="a3"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="1" loc="(160,960)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(230,490)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(440,630)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="0" loc="(530,1700)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="f"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="1" loc="(440,1640)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(230,770)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(160,1360)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(230,290)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(300,2020)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(370,230)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(370,1030)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(300,1750)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(510,190)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(230,80)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(160,1900)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(300,820)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(300,1070)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(370,1690)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(370,530)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(160,460)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(300,1220)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="0" loc="(530,550)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="b"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="1" loc="(370,1740)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(230,810)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(230,1130)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(230,1570)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(370,1590)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="0" loc="(530,1420)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="e"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="1" loc="(300,1630)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(440,1760)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(300,1300)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(230,580)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(370,1280)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(300,1120)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(160,760)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(230,50)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(160,990)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(300,990)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(300,1700)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(300,520)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(370,1130)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(300,1260)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(300,270)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(230,1270)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="0" loc="(530,1160)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="d"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="1" loc="(300,380)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(160,260)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(300,1470)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(300,2070)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(230,1890)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
     <comp lib="0" loc="(530,1970)" name="Pin">
@@ -2587,171 +2629,137 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="label" val="g"/>
       <a name="labelloc" val="north"/>
     </comp>
-    <comp lib="1" loc="(230,930)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(230,250)" name="AND Gate">
+    <comp lib="1" loc="(440,280)" name="OR Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(300,460)" name="AND Gate">
+    <comp lib="1" loc="(230,440)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(300,520)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(370,1740)" name="AND Gate">
+    <comp lib="1" loc="(300,1860)" name="OR Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(300,1750)" name="NOT Gate">
+    <comp lib="1" loc="(300,550)" name="NOT Gate">
       <a name="size" val="20"/>
     </comp>
-    <comp lib="1" loc="(440,1640)" name="OR Gate">
+    <comp lib="1" loc="(370,1790)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(160,760)" name="NOT Gate">
+    <comp lib="1" loc="(160,1410)" name="NOT Gate">
       <a name="size" val="20"/>
     </comp>
-    <comp lib="1" loc="(440,1970)" name="OR Gate">
+    <comp lib="1" loc="(230,970)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(230,1020)" name="NOT Gate">
+    <comp lib="1" loc="(300,870)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(230,1540)" name="NOT Gate">
       <a name="size" val="20"/>
+    </comp>
+    <comp lib="0" loc="(530,190)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="a"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="1" loc="(370,1910)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(370,150)" name="AND Gate">
+      <a name="size" val="30"/>
     </comp>
     <comp lib="1" loc="(510,1700)" name="OR Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(510,550)" name="OR Gate">
+    <comp lib="1" loc="(300,740)" name="OR Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(230,1570)" name="NOT Gate">
+    <comp lib="1" loc="(160,1930)" name="NOT Gate">
       <a name="size" val="20"/>
     </comp>
-    <comp lib="1" loc="(300,2070)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(370,890)" name="OR Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(370,1590)" name="OR Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(160,1830)" name="NOT Gate">
+    <comp lib="1" loc="(160,730)" name="NOT Gate">
       <a name="size" val="20"/>
     </comp>
-    <comp lib="1" loc="(370,1420)" name="OR Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(230,20)" name="NOT Gate">
+    <comp lib="1" loc="(230,1020)" name="NOT Gate">
       <a name="size" val="20"/>
     </comp>
-    <comp lib="1" loc="(300,1070)" name="AND Gate">
+    <comp lib="1" loc="(440,1080)" name="OR Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(300,1220)" name="NOT Gate">
+    <comp lib="1" loc="(230,660)" name="NOT Gate">
       <a name="size" val="20"/>
     </comp>
-    <comp lib="1" loc="(370,1280)" name="AND Gate">
+    <comp lib="1" loc="(160,1600)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(440,1240)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(160,700)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(440,100)" name="OR Gate">
       <a name="size" val="30"/>
     </comp>
     <comp lib="1" loc="(370,1200)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(440,280)" name="OR Gate">
+    <comp lib="1" loc="(370,660)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(370,1130)" name="AND Gate">
+    <comp lib="1" loc="(300,340)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(230,710)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="0" loc="(40,30)" name="Pin">
-      <a name="label" val="a0"/>
-      <a name="labelloc" val="north"/>
+    <comp lib="1" loc="(230,1340)" name="AND Gate">
+      <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(370,420)" name="OR Gate">
+    <comp lib="1" loc="(230,1940)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(300,1370)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(370,1420)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(300,460)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
     <comp lib="1" loc="(300,140)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(160,1330)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(300,2020)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(160,960)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(370,2040)" name="OR Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(370,330)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(230,400)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(300,380)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(230,2030)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(160,260)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(300,1370)" name="OR Gate">
       <a name="size" val="30"/>
     </comp>
     <comp lib="0" loc="(40,90)" name="Pin">
       <a name="label" val="a1"/>
       <a name="labelloc" val="north"/>
     </comp>
-    <comp lib="1" loc="(300,1180)" name="AND Gate">
+    <comp lib="1" loc="(300,30)" name="AND Gate">
       <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(370,600)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(370,330)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(230,1610)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(370,890)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(160,1830)" name="NOT Gate">
+      <a name="size" val="20"/>
     </comp>
     <comp lib="1" loc="(370,60)" name="OR Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(230,1060)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(230,80)" name="NOT Gate">
+    <comp lib="1" loc="(230,1650)" name="NOT Gate">
       <a name="size" val="20"/>
     </comp>
-    <comp lib="1" loc="(160,1930)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(230,1130)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(230,970)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(160,1360)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(370,1030)" name="OR Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(230,860)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(230,1340)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(300,200)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="0" loc="(530,1160)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="d"/>
-      <a name="labelloc" val="north"/>
-    </comp>
-    <comp lib="1" loc="(300,1260)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(370,230)" name="OR Gate">
+    <comp lib="1" loc="(230,1450)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
   </circuit>
@@ -2769,8 +2777,8 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="end" x="125" y="64"/>
       <rect height="19" stroke="none" width="70" x="60" y="50"/>
       <rect fill="none" height="18" stroke="#000000" stroke-width="2" width="69" x="60" y="50"/>
-      <circ-port height="8" pin="60,250" width="8" x="46" y="56"/>
       <circ-port height="10" pin="180,60" width="10" x="135" y="55"/>
+      <circ-port height="8" pin="60,250" width="8" x="46" y="56"/>
       <text fill="#ffffff" font-family="Dialog" font-size="8" font-weight="bold" text-anchor="middle" x="93" y="60">Igual_0</text>
       <circ-anchor facing="east" height="6" width="6" x="137" y="57"/>
     </appear>
@@ -2817,7 +2825,29 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(130,270)" to="(260,270)"/>
     <wire from="(150,220)" to="(150,280)"/>
     <wire from="(80,310)" to="(210,310)"/>
-    <comp lib="1" loc="(160,190)" name="OR Gate">
+    <comp lib="0" loc="(60,250)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="8"/>
+      <a name="label" val="a"/>
+    </comp>
+    <comp lib="1" loc="(180,60)" name="NOT Gate">
+      <a name="facing" val="north"/>
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="0" loc="(180,60)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="label" val="s"/>
+    </comp>
+    <comp lib="1" loc="(240,190)" name="OR Gate">
+      <a name="facing" val="north"/>
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(180,90)" name="OR Gate">
+      <a name="facing" val="north"/>
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(120,190)" name="OR Gate">
       <a name="facing" val="north"/>
       <a name="size" val="30"/>
     </comp>
@@ -2842,33 +2872,11 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="bit6" val="1"/>
       <a name="bit7" val="0"/>
     </comp>
-    <comp lib="0" loc="(60,250)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="width" val="8"/>
-      <a name="label" val="a"/>
-    </comp>
-    <comp lib="0" loc="(180,60)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="output" val="true"/>
-      <a name="label" val="s"/>
-    </comp>
-    <comp lib="1" loc="(180,60)" name="NOT Gate">
-      <a name="facing" val="north"/>
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(120,190)" name="OR Gate">
-      <a name="facing" val="north"/>
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(240,190)" name="OR Gate">
-      <a name="facing" val="north"/>
-      <a name="size" val="30"/>
-    </comp>
     <comp lib="1" loc="(200,190)" name="OR Gate">
       <a name="facing" val="north"/>
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(180,90)" name="OR Gate">
+    <comp lib="1" loc="(160,190)" name="OR Gate">
       <a name="facing" val="north"/>
       <a name="size" val="30"/>
     </comp>
@@ -2915,28 +2923,28 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="label" val="s"/>
       <a name="labelloc" val="north"/>
     </comp>
+    <comp lib="0" loc="(190,160)" name="Pin">
+      <a name="label" val="b"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="1" loc="(430,130)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
     <comp lib="0" loc="(190,110)" name="Pin">
       <a name="label" val="a"/>
       <a name="labelloc" val="north"/>
     </comp>
-    <comp lib="1" loc="(360,110)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="0" loc="(190,160)" name="Pin">
-      <a name="label" val="b"/>
-      <a name="labelloc" val="north"/>
+    <comp lib="1" loc="(290,170)" name="NOT Gate">
+      <a name="size" val="20"/>
     </comp>
     <comp lib="0" loc="(190,210)" name="Pin">
       <a name="label" val="c"/>
       <a name="labelloc" val="north"/>
     </comp>
-    <comp lib="1" loc="(360,160)" name="AND Gate">
+    <comp lib="1" loc="(360,110)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(290,170)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(430,130)" name="OR Gate">
+    <comp lib="1" loc="(360,160)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
   </circuit>
@@ -3050,26 +3058,31 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(100,240)" to="(100,490)"/>
     <wire from="(60,400)" to="(320,400)"/>
     <wire from="(180,430)" to="(180,490)"/>
+    <comp loc="(350,320)" name="MUL_2_1_b"/>
+    <comp loc="(350,200)" name="MUL_2_1_b"/>
     <comp lib="0" loc="(300,520)" name="Pin">
       <a name="facing" val="north"/>
       <a name="label" val="C"/>
     </comp>
+    <comp loc="(350,480)" name="MUL_2_1_b"/>
     <comp lib="0" loc="(250,140)" name="Splitter">
       <a name="facing" val="south"/>
       <a name="fanout" val="8"/>
       <a name="incoming" val="8"/>
       <a name="appear" val="right"/>
     </comp>
-    <comp lib="0" loc="(110,120)" name="Pin">
-      <a name="width" val="8"/>
-      <a name="label" val="A"/>
+    <comp loc="(350,280)" name="MUL_2_1_b"/>
+    <comp lib="0" loc="(120,140)" name="Splitter">
+      <a name="facing" val="south"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+      <a name="appear" val="right"/>
     </comp>
     <comp lib="0" loc="(240,120)" name="Pin">
       <a name="width" val="8"/>
       <a name="label" val="B"/>
     </comp>
-    <comp loc="(350,240)" name="MUL_2_1_b"/>
-    <comp loc="(350,280)" name="MUL_2_1_b"/>
+    <comp loc="(350,400)" name="MUL_2_1_b"/>
     <comp lib="0" loc="(470,380)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -3077,17 +3090,12 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="label" val="S"/>
     </comp>
     <comp loc="(350,440)" name="MUL_2_1_b"/>
-    <comp loc="(350,360)" name="MUL_2_1_b"/>
-    <comp loc="(350,320)" name="MUL_2_1_b"/>
-    <comp loc="(350,200)" name="MUL_2_1_b"/>
-    <comp loc="(350,400)" name="MUL_2_1_b"/>
-    <comp loc="(350,480)" name="MUL_2_1_b"/>
-    <comp lib="0" loc="(120,140)" name="Splitter">
-      <a name="facing" val="south"/>
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
-      <a name="appear" val="right"/>
+    <comp loc="(350,240)" name="MUL_2_1_b"/>
+    <comp lib="0" loc="(110,120)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="label" val="A"/>
     </comp>
+    <comp loc="(350,360)" name="MUL_2_1_b"/>
     <comp lib="0" loc="(450,380)" name="Splitter">
       <a name="facing" val="west"/>
       <a name="fanout" val="8"/>
@@ -3117,12 +3125,12 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="68" y="163">SHL</text>
       <rect height="4" stroke="none" width="10" x="50" y="198"/>
       <circ-port height="8" pin="160,270" width="8" x="46" y="136"/>
-      <circ-port height="8" pin="160,210" width="8" x="46" y="96"/>
       <circ-port height="8" pin="160,150" width="8" x="46" y="176"/>
-      <circ-port height="8" pin="210,70" width="8" x="166" y="226"/>
       <circ-port height="8" pin="160,120" width="8" x="46" y="76"/>
-      <circ-port height="8" pin="160,180" width="8" x="46" y="156"/>
       <circ-port height="8" pin="160,240" width="8" x="46" y="116"/>
+      <circ-port height="8" pin="160,180" width="8" x="46" y="156"/>
+      <circ-port height="8" pin="210,70" width="8" x="166" y="226"/>
+      <circ-port height="8" pin="160,210" width="8" x="46" y="96"/>
       <circ-port height="8" pin="160,300" width="8" x="46" y="196"/>
       <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="65" y="204">SUB</text>
       <rect height="4" stroke="none" width="10" x="50" y="218"/>
@@ -3202,42 +3210,48 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(160,180)" to="(230,180)"/>
     <wire from="(160,120)" to="(230,120)"/>
     <wire from="(160,240)" to="(230,240)"/>
-    <comp lib="0" loc="(160,330)" name="Pin">
-      <a name="width" val="8"/>
-      <a name="label" val="ADD"/>
-    </comp>
-    <comp loc="(300,310)" name="MUL_2_1_8Bits_b"/>
-    <comp loc="(400,160)" name="MUL_2_1_8Bits_b"/>
-    <comp lib="0" loc="(160,120)" name="Pin">
-      <a name="width" val="8"/>
-      <a name="label" val="XXX"/>
-    </comp>
-    <comp lib="0" loc="(160,270)" name="Pin">
-      <a name="width" val="8"/>
-      <a name="label" val="CHOR"/>
-    </comp>
     <comp lib="0" loc="(160,180)" name="Pin">
       <a name="width" val="8"/>
       <a name="label" val="SHL"/>
     </comp>
-    <comp loc="(490,210)" name="MUL_2_1_8Bits_b"/>
-    <comp lib="0" loc="(160,210)" name="Pin">
-      <a name="width" val="8"/>
-      <a name="label" val="E"/>
-    </comp>
-    <comp loc="(300,130)" name="MUL_2_1_8Bits_b"/>
+    <comp loc="(300,310)" name="MUL_2_1_8Bits_b"/>
+    <comp loc="(400,280)" name="MUL_2_1_8Bits_b"/>
+    <comp loc="(300,250)" name="MUL_2_1_8Bits_b"/>
     <comp lib="0" loc="(210,70)" name="Pin">
       <a name="facing" val="south"/>
       <a name="width" val="3"/>
       <a name="label" val="OP"/>
     </comp>
-    <comp lib="0" loc="(160,150)" name="Pin">
+    <comp loc="(490,210)" name="MUL_2_1_8Bits_b"/>
+    <comp loc="(300,130)" name="MUL_2_1_8Bits_b"/>
+    <comp lib="0" loc="(160,210)" name="Pin">
       <a name="width" val="8"/>
-      <a name="label" val="SHR"/>
+      <a name="label" val="E"/>
+    </comp>
+    <comp lib="0" loc="(160,270)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="label" val="CHOR"/>
+    </comp>
+    <comp loc="(400,160)" name="MUL_2_1_8Bits_b"/>
+    <comp lib="0" loc="(160,240)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="label" val="OU"/>
     </comp>
     <comp lib="0" loc="(160,300)" name="Pin">
       <a name="width" val="8"/>
       <a name="label" val="SUB"/>
+    </comp>
+    <comp lib="0" loc="(160,330)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="label" val="ADD"/>
+    </comp>
+    <comp lib="0" loc="(160,120)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="label" val="XXX"/>
+    </comp>
+    <comp lib="0" loc="(160,150)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="label" val="SHR"/>
     </comp>
     <comp lib="0" loc="(590,210)" name="Pin">
       <a name="facing" val="west"/>
@@ -3245,12 +3259,6 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="width" val="8"/>
       <a name="label" val="S"/>
     </comp>
-    <comp lib="0" loc="(160,240)" name="Pin">
-      <a name="width" val="8"/>
-      <a name="label" val="OU"/>
-    </comp>
-    <comp loc="(400,280)" name="MUL_2_1_8Bits_b"/>
-    <comp loc="(300,250)" name="MUL_2_1_8Bits_b"/>
     <comp lib="0" loc="(210,70)" name="Splitter">
       <a name="facing" val="south"/>
       <a name="fanout" val="3"/>
@@ -3277,10 +3285,10 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <text fill="#ffffff" font-family="Dialog" font-size="12" text-anchor="start" x="103" y="150">OP</text>
       <rect height="3" stroke="none" width="10" x="110" y="59"/>
       <circ-port height="8" pin="210,350" width="8" x="106" y="146"/>
-      <circ-port height="8" pin="60,310" width="8" x="46" y="96"/>
       <circ-port height="8" pin="130,310" width="8" x="46" y="56"/>
-      <circ-port height="8" pin="60,60" width="8" x="46" y="76"/>
       <circ-port height="8" pin="130,60" width="8" x="46" y="116"/>
+      <circ-port height="8" pin="60,60" width="8" x="46" y="76"/>
+      <circ-port height="8" pin="60,310" width="8" x="46" y="96"/>
       <circ-port height="10" pin="490,170" width="10" x="115" y="55"/>
       <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="end" x="105" y="64">C</text>
       <rect height="15" stroke="none" width="57" x="61" y="132"/>
@@ -3339,38 +3347,33 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(60,310)" to="(70,310)"/>
     <wire from="(300,150)" to="(300,210)"/>
     <wire from="(220,100)" to="(220,220)"/>
-    <comp lib="0" loc="(130,60)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="label" val="ADD"/>
+    <comp loc="(400,170)" name="MUL_2_1_b"/>
+    <comp lib="0" loc="(490,170)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="C"/>
     </comp>
-    <comp lib="0" loc="(40,180)" name="Ground"/>
-    <comp loc="(340,200)" name="MUL_2_1_b"/>
     <comp lib="0" loc="(130,310)" name="Pin">
       <a name="facing" val="north"/>
       <a name="label" val="SHR"/>
     </comp>
-    <comp loc="(270,270)" name="MUL_2_1_b"/>
     <comp loc="(270,210)" name="MUL_2_1_b"/>
+    <comp loc="(270,90)" name="MUL_2_1_b"/>
+    <comp loc="(270,270)" name="MUL_2_1_b"/>
     <comp lib="0" loc="(60,310)" name="Pin">
       <a name="facing" val="north"/>
       <a name="label" val="SHL"/>
     </comp>
     <comp loc="(340,140)" name="MUL_2_1_b"/>
-    <comp loc="(270,90)" name="MUL_2_1_b"/>
+    <comp lib="0" loc="(130,60)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="ADD"/>
+    </comp>
+    <comp loc="(340,200)" name="MUL_2_1_b"/>
     <comp lib="0" loc="(210,350)" name="Pin">
       <a name="facing" val="north"/>
       <a name="width" val="3"/>
       <a name="label" val="OP"/>
-    </comp>
-    <comp loc="(400,170)" name="MUL_2_1_b"/>
-    <comp lib="0" loc="(60,60)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="label" val="SUB"/>
-    </comp>
-    <comp lib="0" loc="(490,170)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="C"/>
     </comp>
     <comp lib="0" loc="(210,350)" name="Splitter">
       <a name="facing" val="north"/>
@@ -3379,6 +3382,11 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="appear" val="right"/>
       <a name="bit0" val="2"/>
       <a name="bit2" val="0"/>
+    </comp>
+    <comp lib="0" loc="(40,180)" name="Ground"/>
+    <comp lib="0" loc="(60,60)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="SUB"/>
     </comp>
   </circuit>
   <circuit name="Decodificador_4b">
@@ -3402,10 +3410,10 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <rect height="3" stroke="none" width="10" x="200" y="108"/>
       <rect height="3" stroke="none" width="10" x="200" y="89"/>
       <circ-port height="10" pin="850,770" width="10" x="205" y="105"/>
-      <circ-port height="10" pin="890,710" width="10" x="205" y="85"/>
       <circ-port height="10" pin="830,710" width="10" x="205" y="55"/>
-      <circ-port height="10" pin="850,710" width="10" x="205" y="65"/>
       <circ-port height="10" pin="830,770" width="10" x="205" y="95"/>
+      <circ-port height="10" pin="850,710" width="10" x="205" y="65"/>
+      <circ-port height="10" pin="890,710" width="10" x="205" y="85"/>
       <circ-port height="8" pin="120,40" width="8" x="46" y="56"/>
       <rect height="3" stroke="none" width="10" x="201" y="68"/>
       <circ-port height="10" pin="870,770" width="10" x="205" y="115"/>
@@ -3417,8 +3425,8 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     </appear>
     <wire from="(50,290)" to="(50,300)"/>
     <wire from="(50,130)" to="(50,140)"/>
-    <wire from="(50,1170)" to="(50,1180)"/>
     <wire from="(50,1010)" to="(50,1020)"/>
+    <wire from="(50,1170)" to="(50,1180)"/>
     <wire from="(70,790)" to="(70,800)"/>
     <wire from="(70,630)" to="(70,640)"/>
     <wire from="(50,530)" to="(50,540)"/>
@@ -3452,12 +3460,12 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(170,220)" to="(170,230)"/>
     <wire from="(170,940)" to="(170,950)"/>
     <wire from="(50,340)" to="(50,350)"/>
-    <wire from="(50,980)" to="(50,990)"/>
     <wire from="(50,820)" to="(50,830)"/>
+    <wire from="(50,980)" to="(50,990)"/>
+    <wire from="(50,1220)" to="(50,1230)"/>
+    <wire from="(50,500)" to="(50,510)"/>
     <wire from="(70,200)" to="(70,210)"/>
     <wire from="(50,740)" to="(50,750)"/>
-    <wire from="(50,500)" to="(50,510)"/>
-    <wire from="(50,1220)" to="(50,1230)"/>
     <wire from="(120,1130)" to="(170,1130)"/>
     <wire from="(120,410)" to="(170,410)"/>
     <wire from="(650,790)" to="(690,790)"/>
@@ -3493,13 +3501,13 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(50,470)" to="(50,480)"/>
     <wire from="(50,310)" to="(50,320)"/>
     <wire from="(50,150)" to="(50,160)"/>
+    <wire from="(50,870)" to="(50,880)"/>
+    <wire from="(70,170)" to="(70,180)"/>
+    <wire from="(50,1030)" to="(50,1040)"/>
     <wire from="(50,710)" to="(50,720)"/>
     <wire from="(50,1270)" to="(50,1280)"/>
     <wire from="(50,550)" to="(50,560)"/>
     <wire from="(50,1190)" to="(50,1200)"/>
-    <wire from="(50,1030)" to="(50,1040)"/>
-    <wire from="(50,870)" to="(50,880)"/>
-    <wire from="(70,170)" to="(70,180)"/>
     <wire from="(250,420)" to="(690,420)"/>
     <wire from="(830,770)" to="(830,800)"/>
     <wire from="(70,650)" to="(70,670)"/>
@@ -3507,11 +3515,11 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(50,70)" to="(150,70)"/>
     <wire from="(50,310)" to="(150,310)"/>
     <wire from="(50,150)" to="(150,150)"/>
+    <wire from="(50,1030)" to="(150,1030)"/>
+    <wire from="(50,1190)" to="(150,1190)"/>
     <wire from="(50,870)" to="(150,870)"/>
     <wire from="(50,710)" to="(150,710)"/>
     <wire from="(50,470)" to="(150,470)"/>
-    <wire from="(50,1190)" to="(150,1190)"/>
-    <wire from="(50,1030)" to="(150,1030)"/>
     <wire from="(50,550)" to="(150,550)"/>
     <wire from="(50,1270)" to="(150,1270)"/>
     <wire from="(50,1110)" to="(150,1110)"/>
@@ -3584,11 +3592,11 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(70,430)" to="(70,460)"/>
     <wire from="(660,690)" to="(870,690)"/>
     <wire from="(610,680)" to="(610,780)"/>
+    <wire from="(70,850)" to="(150,850)"/>
+    <wire from="(70,690)" to="(150,690)"/>
     <wire from="(70,1090)" to="(150,1090)"/>
     <wire from="(70,210)" to="(150,210)"/>
     <wire from="(70,610)" to="(150,610)"/>
-    <wire from="(70,850)" to="(150,850)"/>
-    <wire from="(70,690)" to="(150,690)"/>
     <wire from="(40,40)" to="(50,40)"/>
     <wire from="(70,1150)" to="(70,1210)"/>
     <wire from="(70,910)" to="(70,970)"/>
@@ -3598,14 +3606,14 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(50,60)" to="(50,70)"/>
     <wire from="(50,300)" to="(50,310)"/>
     <wire from="(50,140)" to="(50,150)"/>
-    <wire from="(50,1020)" to="(50,1030)"/>
-    <wire from="(50,860)" to="(50,870)"/>
-    <wire from="(50,540)" to="(50,550)"/>
-    <wire from="(50,700)" to="(50,710)"/>
     <wire from="(70,640)" to="(70,650)"/>
     <wire from="(70,800)" to="(70,810)"/>
+    <wire from="(50,700)" to="(50,710)"/>
+    <wire from="(50,1020)" to="(50,1030)"/>
     <wire from="(50,1180)" to="(50,1190)"/>
     <wire from="(50,1100)" to="(50,1110)"/>
+    <wire from="(50,860)" to="(50,870)"/>
+    <wire from="(50,540)" to="(50,550)"/>
     <wire from="(120,770)" to="(170,770)"/>
     <wire from="(640,800)" to="(700,800)"/>
     <wire from="(50,60)" to="(150,60)"/>
@@ -3703,55 +3711,55 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(650,680)" to="(850,680)"/>
     <wire from="(120,770)" to="(120,950)"/>
     <wire from="(630,700)" to="(640,700)"/>
+    <comp lib="0" loc="(80,40)" name="Ground"/>
     <comp loc="(250,1140)" name="MUL_16_1_1b"/>
-    <comp loc="(250,960)" name="MUL_16_1_1b"/>
-    <comp lib="5" loc="(640,710)" name="7-Segment Display"/>
-    <comp lib="0" loc="(830,710)" name="Pin">
-      <a name="facing" val="north"/>
+    <comp lib="0" loc="(850,770)" name="Pin">
+      <a name="facing" val="south"/>
       <a name="output" val="true"/>
-      <a name="label" val="g"/>
-    </comp>
-    <comp loc="(250,240)" name="MUL_16_1_1b"/>
-    <comp lib="0" loc="(870,710)" name="Pin">
-      <a name="facing" val="north"/>
-      <a name="output" val="true"/>
-      <a name="label" val="f"/>
+      <a name="label" val="c"/>
     </comp>
     <comp lib="0" loc="(870,770)" name="Pin">
       <a name="facing" val="south"/>
       <a name="output" val="true"/>
       <a name="label" val="b"/>
     </comp>
-    <comp loc="(250,780)" name="MUL_16_1_1b"/>
-    <comp lib="0" loc="(40,40)" name="Power"/>
-    <comp lib="0" loc="(850,710)" name="Pin">
-      <a name="facing" val="north"/>
-      <a name="output" val="true"/>
-      <a name="label" val="e"/>
+    <comp lib="0" loc="(120,40)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="4"/>
+      <a name="label" val="OP"/>
     </comp>
+    <comp lib="5" loc="(640,710)" name="7-Segment Display"/>
+    <comp loc="(250,240)" name="MUL_16_1_1b"/>
     <comp lib="0" loc="(830,770)" name="Pin">
       <a name="facing" val="south"/>
       <a name="output" val="true"/>
       <a name="label" val="d"/>
     </comp>
-    <comp lib="0" loc="(850,770)" name="Pin">
-      <a name="facing" val="south"/>
+    <comp loc="(250,780)" name="MUL_16_1_1b"/>
+    <comp lib="0" loc="(830,710)" name="Pin">
+      <a name="facing" val="north"/>
       <a name="output" val="true"/>
-      <a name="label" val="c"/>
+      <a name="label" val="g"/>
+    </comp>
+    <comp loc="(250,60)" name="MUL_16_1_1b"/>
+    <comp lib="0" loc="(870,710)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="output" val="true"/>
+      <a name="label" val="f"/>
     </comp>
     <comp lib="0" loc="(890,710)" name="Pin">
       <a name="facing" val="north"/>
       <a name="output" val="true"/>
       <a name="label" val="a"/>
     </comp>
-    <comp loc="(250,600)" name="MUL_16_1_1b"/>
-    <comp loc="(250,60)" name="MUL_16_1_1b"/>
-    <comp lib="0" loc="(120,40)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="width" val="4"/>
-      <a name="label" val="OP"/>
+    <comp loc="(250,960)" name="MUL_16_1_1b"/>
+    <comp lib="0" loc="(40,40)" name="Power"/>
+    <comp lib="0" loc="(850,710)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="output" val="true"/>
+      <a name="label" val="e"/>
     </comp>
-    <comp lib="0" loc="(80,40)" name="Ground"/>
+    <comp loc="(250,600)" name="MUL_16_1_1b"/>
     <comp loc="(250,420)" name="MUL_16_1_1b"/>
   </circuit>
   <circuit name="MUL_16_1_1b">
@@ -3914,89 +3922,20 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(180,350)" to="(180,790)"/>
     <wire from="(450,390)" to="(450,510)"/>
     <wire from="(610,320)" to="(620,320)"/>
-    <comp lib="0" loc="(100,70)" name="Pin">
+    <comp lib="0" loc="(220,70)" name="Pin">
       <a name="facing" val="south"/>
-      <a name="label" val="treze"/>
+      <a name="label" val="sete"/>
     </comp>
-    <comp loc="(500,290)" name="MUL_2_1_b"/>
-    <comp lib="0" loc="(40,70)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="label" val="desesseis"/>
-    </comp>
-    <comp lib="0" loc="(200,70)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="label" val="oito"/>
-    </comp>
-    <comp lib="0" loc="(120,70)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="label" val="doze"/>
-    </comp>
-    <comp loc="(410,460)" name="MUL_2_1_b"/>
-    <comp loc="(410,310)" name="MUL_2_1_b"/>
-    <comp lib="0" loc="(80,70)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="label" val="quatorze"/>
-    </comp>
-    <comp loc="(500,340)" name="MUL_2_1_b"/>
-    <comp loc="(410,210)" name="MUL_2_1_b"/>
     <comp lib="0" loc="(690,310)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
     </comp>
     <comp loc="(410,510)" name="MUL_2_1_b"/>
-    <comp loc="(580,290)" name="MUL_2_1_b"/>
-    <comp lib="0" loc="(240,70)" name="Pin">
+    <comp lib="0" loc="(40,70)" name="Pin">
       <a name="facing" val="south"/>
-      <a name="label" val="seis"/>
-    </comp>
-    <comp loc="(650,310)" name="MUL_2_1_b"/>
-    <comp loc="(410,160)" name="MUL_2_1_b"/>
-    <comp loc="(420,260)" name="MUL_2_1_b"/>
-    <comp lib="0" loc="(450,40)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="width" val="4"/>
-      <a name="label" val="OP"/>
+      <a name="label" val="desesseis"/>
     </comp>
     <comp loc="(500,240)" name="MUL_2_1_b"/>
-    <comp lib="0" loc="(320,70)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="label" val="dois"/>
-    </comp>
-    <comp loc="(410,410)" name="MUL_2_1_b"/>
-    <comp lib="0" loc="(140,70)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="label" val="onze"/>
-    </comp>
-    <comp lib="0" loc="(180,70)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="label" val="nove"/>
-    </comp>
-    <comp lib="0" loc="(260,70)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="label" val="cinco"/>
-    </comp>
-    <comp lib="0" loc="(280,70)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="label" val="quatro"/>
-    </comp>
-    <comp lib="0" loc="(220,70)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="label" val="sete"/>
-    </comp>
-    <comp loc="(580,340)" name="MUL_2_1_b"/>
-    <comp lib="0" loc="(340,70)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="label" val="um"/>
-    </comp>
-    <comp loc="(500,390)" name="MUL_2_1_b"/>
-    <comp lib="0" loc="(60,70)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="label" val="quinze"/>
-    </comp>
-    <comp lib="0" loc="(160,70)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="label" val="dez"/>
-    </comp>
     <comp lib="0" loc="(450,40)" name="Splitter">
       <a name="facing" val="south"/>
       <a name="fanout" val="4"/>
@@ -4006,10 +3945,79 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="bit2" val="1"/>
       <a name="bit3" val="0"/>
     </comp>
+    <comp loc="(500,340)" name="MUL_2_1_b"/>
+    <comp loc="(500,290)" name="MUL_2_1_b"/>
+    <comp lib="0" loc="(160,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="dez"/>
+    </comp>
     <comp lib="0" loc="(300,70)" name="Pin">
       <a name="facing" val="south"/>
       <a name="label" val="tres"/>
     </comp>
+    <comp loc="(580,290)" name="MUL_2_1_b"/>
+    <comp loc="(500,390)" name="MUL_2_1_b"/>
+    <comp loc="(410,410)" name="MUL_2_1_b"/>
+    <comp lib="0" loc="(340,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="um"/>
+    </comp>
+    <comp loc="(650,310)" name="MUL_2_1_b"/>
+    <comp lib="0" loc="(200,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="oito"/>
+    </comp>
+    <comp loc="(410,210)" name="MUL_2_1_b"/>
+    <comp loc="(420,260)" name="MUL_2_1_b"/>
+    <comp lib="0" loc="(280,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="quatro"/>
+    </comp>
+    <comp lib="0" loc="(320,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="dois"/>
+    </comp>
+    <comp lib="0" loc="(100,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="treze"/>
+    </comp>
+    <comp lib="0" loc="(80,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="quatorze"/>
+    </comp>
     <comp loc="(410,360)" name="MUL_2_1_b"/>
+    <comp loc="(580,340)" name="MUL_2_1_b"/>
+    <comp loc="(410,160)" name="MUL_2_1_b"/>
+    <comp lib="0" loc="(450,40)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="4"/>
+      <a name="label" val="OP"/>
+    </comp>
+    <comp lib="0" loc="(180,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="nove"/>
+    </comp>
+    <comp loc="(410,310)" name="MUL_2_1_b"/>
+    <comp lib="0" loc="(260,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="cinco"/>
+    </comp>
+    <comp loc="(410,460)" name="MUL_2_1_b"/>
+    <comp lib="0" loc="(240,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="seis"/>
+    </comp>
+    <comp lib="0" loc="(140,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="onze"/>
+    </comp>
+    <comp lib="0" loc="(120,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="doze"/>
+    </comp>
+    <comp lib="0" loc="(60,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="quinze"/>
+    </comp>
   </circuit>
 </project>
